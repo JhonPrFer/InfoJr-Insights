@@ -5,9 +5,9 @@ import { HomeStyled } from '../src/styles/Home.styled'
 
 const Home: NextPage = () => {
   return (
-    <div>
-      
-    </div>
+    <HomeStyled>
+      aaa
+    </HomeStyled>
   )
 }
 

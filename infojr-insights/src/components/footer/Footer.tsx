@@ -16,7 +16,7 @@ const Footer = ()=>{
     return (
         <S.Footer>
             <S.FooterCima>
-                <a href="#"><Image src={Logo} alt="Logo"/></a>
+                <a className='logo_footer' href="#"><Image src={Logo} alt="Logo"/></a>
                     <div className='redes_sociais'>
                         <a className='footer_link' href="#"><Image src={Linkedin} alt='Linkedin' /></a> 
                         <a className='footer_link' href="#"><Image src={Behance} alt='Behance' /></a> 
@@ -28,8 +28,8 @@ const Footer = ()=>{
                     </div>
             </S.FooterCima>
             <S.FooteBaixo>
-                <p><span className='span'>Email</span>: contato@infojr.com.br | <span className='span'>Telefone</span>: 71 3283-6268</p>
-                <p>Copyright @ 2020 INFO JR UFBA - Av. Adhemar de Barros, Ondina – Instituto de computação da UFBA</p>
+                <p className='footer_info'><span className='span'>Email</span>: contato@infojr.com.br | <span className='span'>Telefone</span>: 71 3283-6268</p>
+                <p className='footer_info'>Copyright @ 2020 INFO JR UFBA - Av. Adhemar de Barros, Ondina – Instituto de computação da UFBA</p>
             </S.FooteBaixo>
         </S.Footer>
 

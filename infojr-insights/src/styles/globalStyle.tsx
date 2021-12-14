@@ -6,5 +6,7 @@ export default createGlobalStyle`
     padding: 0;
     border: none;
     text-decoration: none;
+    font-family: 'poppins', sans serif;
+    scroll-behavior: smooth;
 }
 `
