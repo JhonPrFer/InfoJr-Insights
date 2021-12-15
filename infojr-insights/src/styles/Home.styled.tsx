@@ -1,6 +1,7 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
-export const HomeStyled = styled.div`
-    display: flex;
-
+const HomeStyled = styled.div`
+  display: flex;
 `
+
+export default HomeStyled
