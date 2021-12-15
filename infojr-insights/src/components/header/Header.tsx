@@ -1,7 +1,12 @@
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 
 import * as S from './HeaderStyle'
 import Logo from './images/Logo InfoJr.svg'
+
+library.add(faBars, faTimes)
 
 const Header = () => {
   function toggleMenu() {
@@ -27,11 +32,9 @@ const Header = () => {
         <button className="btn header_btn header-desktop">
           Adicionar link
         </button>
-        <button className="header-mobile btn_menu" onClick={toggleMenu}>
-          menu
-        </button>
-        <button className="header-mobile btn_fechar" onClick={toggleMenu}>
-          fechar
+        <button className="btn_menu" onClick={toggleMenu}>
+          <FontAwesomeIcon icon="bars" className="header-mobile btn_abrir" />
+          <FontAwesomeIcon icon="times" className="header-mobile btn_fechar" />
         </button>
       </nav>
       <nav className="nav_mobile" id="nav_mobile">

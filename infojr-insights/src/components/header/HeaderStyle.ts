@@ -38,7 +38,13 @@ export const Header = styled.header`
     font-size: 1.6rem;
   }
 
-  .btn_menu,
+  .btn_menu {
+    background: none;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  .btn_abrir,
   .btn_fechar {
     cursor: pointer;
   }
@@ -47,6 +53,13 @@ export const Header = styled.header`
     padding: 10px 25px;
     border-radius: 8px;
     font-size: 1.4rem;
+    background: #191919;
+    border: 1px solid #7cb124;
+    transition: 0.3s;
+  }
+
+  .header_btn:hover {
+    background: #7cb124;
   }
 
   .nav_mobile {
@@ -105,7 +118,7 @@ export const Header = styled.header`
       display: none;
     }
 
-    .nav_desktop.ativo .btn_menu {
+    .nav_desktop.ativo .btn_abrir {
       display: none;
     }
 
