@@ -17,25 +17,60 @@ const Footer = () => (
         <Image src={Logo} alt="Logo" />
       </a>
       <div className="redes_sociais">
-        <a className="footer_link" href="www.google.com">
+        <a
+          className="footer_link"
+          target="_blank"
+          href="https://www.linkedin.com/company/infojrufba/mycompany/"
+          rel="noreferrer"
+        >
           <Image src={Linkedin} alt="Linkedin" />
         </a>
-        <a className="footer_link" href="www.google.com">
+        <a
+          className="footer_link"
+          target="_blank"
+          href="https://www.behance.net/infojrufba"
+          rel="noreferrer"
+        >
           <Image src={Behance} alt="Behance" />
         </a>
-        <a className="footer_link" href="www.google.com">
+        <a
+          className="footer_link"
+          target="_blank"
+          href="https://dribbble.com/UFBA/shots"
+          rel="noreferrer"
+        >
           <Image src={Dribble} alt="Dribble" />
         </a>
-        <a className="footer_link" href="www.google.com">
+        <a
+          className="footer_link"
+          target="_blank"
+          href="https://www.instagram.com/infojrufba/"
+          rel="noreferrer"
+        >
           <Image src={Instagram} alt="Instagram" />
         </a>
-        <a className="footer_link" href="www.google.com">
+        <a
+          className="footer_link"
+          target="_blank"
+          href="https://pt-br.facebook.com/infojrnews"
+          rel="noreferrer"
+        >
           <Image src={Facebook} alt="Facebook" />
         </a>
-        <a className="footer_link" href="www.google.com">
+        <a
+          className="footer_link"
+          target="_blank"
+          href="https://www.youtube.com/channel/UCI4tVJVwzFNHWQdiVi9Iv9w"
+          rel="noreferrer"
+        >
           <Image src={Youtube} alt="Youtube" />
         </a>
-        <a className="footer_link" href="www.google.com">
+        <a
+          className="footer_link"
+          target="_blank"
+          href="https://open.spotify.com/show/5Un3AxZIPep1k4lsOfQMfy"
+          rel="noreferrer"
+        >
           <Image src={Spotify} alt="Spotify" />
         </a>
       </div>

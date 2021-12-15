@@ -24,10 +24,13 @@ export const Header = styled.header`
     font-size: 1.6rem;
   }
 
-  .header_link.ativo,
-  .header_link:hover {
+  .header_link.ativo {
     color: #7cb124;
     font-weight: 700;
+  }
+
+  .header_link:hover {
+    color: #badc41;
   }
 
   .btn {
@@ -44,6 +47,10 @@ export const Header = styled.header`
     font-size: 1.5rem;
   }
 
+  .btn_fechar {
+    color: #7cb124;
+  }
+
   .btn_abrir,
   .btn_fechar {
     cursor: pointer;
@@ -53,19 +60,19 @@ export const Header = styled.header`
     padding: 10px 25px;
     border-radius: 8px;
     font-size: 1.4rem;
-    background: #191919;
-    border: 1px solid #7cb124;
+    background: #7cb124;
     transition: 0.3s;
   }
 
   .header_btn:hover {
-    background: #7cb124;
+    background: #5a880e;
   }
 
   .nav_mobile {
     display: none;
   }
 
+  .modal_menu,
   .header-mobile {
     display: none;
   }
@@ -83,37 +90,48 @@ export const Header = styled.header`
       display: block;
     }
 
-    .nav_mobile {
+    .modal_menu {
+      display: flex;
+      justify-content: center;
       position: fixed;
       visibility: hidden;
-      flex-direction: column;
       justify-content: center;
-      align-items: center;
-      gap: 100px;
       top: 60px;
-      left: 0px;
+      left: 0;
       width: 100vw;
       height: 0;
-      display: flex;
-      background-color: #191919;
+      background-color: rgba(26, 28, 23, 0.6);
+      backdrop-filter: blur(4px);
       z-index: 1;
-      overflow: auto;
-      transition: 0.5s;
+      transition: 0.4s;
     }
 
-    .nav_mobile.ativo {
+    .modal_menu.ativo {
       visibility: visible;
       height: 100vh;
     }
 
-    .header_link {
-      font-size: 2.6rem;
+    .nav_mobile {
+      display: flex;
+      visibility: hidden;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: -400px;
+      gap: 30px;
+      width: max-content;
+      height: max-content;
+      background: #252822;
+      padding: 76px 62px;
+      border-radius: 12px;
+      transition: 0.4s;
     }
 
-    .header_btn {
-      font-size: 2rem;
+    .nav_mobile.ativo {
+      visibility: visible;
+      top: 60px;
     }
-
     .btn_fechar {
       display: none;
     }

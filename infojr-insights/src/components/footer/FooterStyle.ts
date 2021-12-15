@@ -18,6 +18,11 @@ export const FooterCima = styled.section`
 
   .footer_link {
     width: 45px;
+    border-radius: 30px;
+  }
+
+  .footer_link:hover {
+    filter: drop-shadow(0px 0px 10px #5a880e);
   }
 
   @media (max-width: 950px) {
@@ -36,6 +41,7 @@ export const FooterCima = styled.section`
 
     .footer_link {
       width: 27px;
+      border-radius: 18px;
     }
   }
 `
