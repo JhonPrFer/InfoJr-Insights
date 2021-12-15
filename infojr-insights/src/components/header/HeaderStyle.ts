@@ -2,6 +2,7 @@
 import styled from 'styled-components'
 
 export const Header = styled.header`
+  position: fixed;
   box-sizing: border-box;
   display: flex;
   width: 100%;
@@ -10,6 +11,7 @@ export const Header = styled.header`
   padding: 15px 12%;
   height: max-content;
   background: #191919;
+  z-index: 1;
 
   .nav_desktop {
     display: flex;
@@ -97,6 +99,18 @@ export const Header = styled.header`
 
     .header_btn {
       font-size: 2rem;
+    }
+
+    .btn_fechar {
+      display: none;
+    }
+
+    .nav_desktop.ativo .btn_menu {
+      display: none;
+    }
+
+    .nav_desktop.ativo .btn_fechar {
+      display: block;
     }
   }
 `

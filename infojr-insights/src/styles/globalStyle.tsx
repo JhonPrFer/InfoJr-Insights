@@ -9,5 +9,9 @@ export default createGlobalStyle`
     font-family: 'poppins', sans serif;
     scroll-behavior: smooth;
     font-size: 10px;
+    
+    .body.ativo{
+        overflow: hidden;
+    }
 }
 `

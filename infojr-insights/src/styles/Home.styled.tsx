@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const HomeStyled = styled.div`
-  display: flex;
+  margin-top: 90px;
 `
 
 export default HomeStyled
