@@ -51,10 +51,12 @@ export const FooteBaixo = styled.section`
   padding: 35px 0;
 
   .footer_info {
+    font-size: 1.6rem;
     width: max-content;
   }
 
   .span {
+    font-size: 1.6rem;
     font-weight: 700;
   }
 
