@@ -33,12 +33,10 @@ export const Header = styled.header`
     color: #badc41;
   }
 
-  .btn {
-    background: #7cb124;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1.6rem;
+  .header_btn {
+    padding: 10px 25px;
+    border-radius: 8px;
+    font-size: 1.4rem;
   }
 
   .btn_menu {
@@ -54,14 +52,6 @@ export const Header = styled.header`
   .btn_abrir,
   .btn_fechar {
     cursor: pointer;
-  }
-
-  .header_btn {
-    padding: 10px 25px;
-    border-radius: 8px;
-    font-size: 1.4rem;
-    background: #7cb124;
-    transition: 0.3s;
   }
 
   .header_btn:hover {

@@ -61,7 +61,7 @@ export const FooteBaixo = styled.section`
     width: max-content;
   }
 
-  .span {
+  .span_footer {
     font-size: 1.6rem;
     font-weight: 700;
   }

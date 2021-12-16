@@ -9,9 +9,20 @@ export default createGlobalStyle`
     font-family: 'poppins', sans serif;
     scroll-behavior: smooth;
     font-size: 10px;
+    color: #fff;
     
     .body.ativo{
         overflow: hidden;
     }
+
+  .btn {
+    background: #7cb124;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: 0.3s;
+    border-radius: 30px;
+  }
+
 }
 `

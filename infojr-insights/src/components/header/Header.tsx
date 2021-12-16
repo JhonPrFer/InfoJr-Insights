@@ -35,7 +35,7 @@ const Header = () => {
           Adicionar link
         </button>
         <button
-          className="btn_menu"
+          className="btn_menu header-mobile"
           aria-label="abrir menu"
           onClick={toggleMenu}
         >
