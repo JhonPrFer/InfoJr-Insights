@@ -8,6 +8,13 @@ const HomeStyled = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 80px;
+  color: #fff;
+
+  @media (max-width: 720px) {
+    justify-content: center;
+    grid-template-columns: auto;
+    padding: calc(100px + 60px) 12%;
+  }
 `
 
 export default HomeStyled

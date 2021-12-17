@@ -34,13 +34,11 @@ const Header = () => {
         <button className="btn header_btn header-desktop">
           Adicionar link
         </button>
-        <button
-          className="btn_menu header-mobile"
-          aria-label="abrir menu"
-          onClick={toggleMenu}
-        >
+        <button className="btn_menu btn_menu-abrir" onClick={toggleMenu}>
           <FontAwesomeIcon icon="bars" className="header-mobile btn_abrir" />
-          <FontAwesomeIcon icon="times" className="header-mobile btn_fechar" />
+        </button>
+        <button className="btn_menu btn_menu-fechar" onClick={toggleMenu}>
+          <FontAwesomeIcon icon="times" className="header-mobile fechar-icon" />
         </button>
       </nav>
       <div className="modal_menu" id="modal_menu">

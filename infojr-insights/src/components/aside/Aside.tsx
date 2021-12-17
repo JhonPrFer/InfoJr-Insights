@@ -5,10 +5,10 @@ import Logo from './images/Logo.svg'
 
 const Aside = () => (
   <S.Aside>
-    <div className="aside_logo">
-      <Image src={Logo} alt="" />
-    </div>
-    <div className="aside_texto">
+    <h1 className="aside_logo">
+      <Image src={Logo} alt="Info junior insights" />
+    </h1>
+    <h2 className="aside_texto">
       <p className="aside_paragrafo">
         A internet possibilita o infinito acesso a todo tipo de conhecimento
       </p>
@@ -21,7 +21,7 @@ const Aside = () => (
         Comece a contribuir clicando no botão “
         <span className="span_aside">adicionar link</span>”.
       </p>
-    </div>
+    </h2>
     <div className="botoes">
       <button className="btn btn_aside">Adicionar link</button>
       <button className="btn btn_aside btn_ver-todos">

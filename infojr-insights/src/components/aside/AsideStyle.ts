@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const Aside = styled.aside`
   display: grid;
   grid-template-columns: 315px;
+  grid-column: span 1;
   width: max-content;
   gap: 40px;
   justify-content: flex-start;
@@ -10,6 +11,7 @@ export const Aside = styled.aside`
   .aside_texto {
     display: grid;
     gap: 30px;
+    font-weight: 400;
   }
 
   .aside_paragrafo,
@@ -26,7 +28,7 @@ export const Aside = styled.aside`
   }
 
   .btn_aside {
-    width: 315px;
+    width: 100%;
     padding: 10px 0;
     border: 2px solid #7cb124;
   }
@@ -64,5 +66,9 @@ export const Aside = styled.aside`
     color: #7cb124;
     font-weight: 700;
     font-size: 1.4rem;
+  }
+
+  @media (max-width: 720px) {
+    grid-template-columns: 280px;
   }
 `
