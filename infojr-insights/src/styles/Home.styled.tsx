@@ -6,12 +6,17 @@ const HomeStyled = styled.div`
   padding: calc(164px + 90px) 12%;
   background: #1a1c17;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto;
   column-gap: 80px;
   color: #fff;
 
+  @media (max-width: 1000px) {
+    grid-template-columns: auto;
+    row-gap: 50px;
+    padding: calc(100px + 60px) 12%;
+  }
+
   @media (max-width: 720px) {
-    justify-content: center;
     grid-template-columns: auto;
     padding: calc(100px + 60px) 12%;
   }

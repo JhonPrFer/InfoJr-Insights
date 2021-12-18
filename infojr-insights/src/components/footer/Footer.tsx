@@ -13,7 +13,7 @@ import Logo from './images/Logo InfoJr.svg'
 const Footer = () => (
   <S.Footer>
     <S.FooterCima>
-      <a className="logo_footer" href="www.google.com">
+      <a className="logo_footer" target="_blanck" href="https://infojr.com.br/">
         <Image src={Logo} alt="Logo" />
       </a>
       <div className="redes_sociais">

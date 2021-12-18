@@ -68,6 +68,10 @@ export const Aside = styled.aside`
     font-size: 1.4rem;
   }
 
+  @media (max-width: 1000px) {
+    justify-self: center;
+  }
+
   @media (max-width: 720px) {
     grid-template-columns: 280px;
   }

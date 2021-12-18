@@ -11,7 +11,7 @@ export const Header = styled.header`
   padding: 15px 12%;
   height: max-content;
   background: #191919;
-  z-index: 1;
+  z-index: 2;
 
   .nav_desktop {
     display: flex;
@@ -76,6 +76,7 @@ export const Header = styled.header`
   }
 
   @media (max-width: 720px) {
+    height: 60px;
     background: #1a1c17;
     .header_logo {
       width: 60px;
