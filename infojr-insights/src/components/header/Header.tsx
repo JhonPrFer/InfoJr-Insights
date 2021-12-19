@@ -21,7 +21,7 @@ const Header = () => {
   }
 
   function abrePag() {
-    location.href = 'www.google.com'
+    location.href = 'http://localhost:3000/adicionarLink'
   }
   return (
     <S.Header>
@@ -31,7 +31,7 @@ const Header = () => {
       <nav className="nav_desktop" id="nav_desktop">
         <a
           className="header_link ativo header-desktop"
-          href="http://localhost:3000/#"
+          href="http://localhost:3000"
         >
           Inicio
         </a>
