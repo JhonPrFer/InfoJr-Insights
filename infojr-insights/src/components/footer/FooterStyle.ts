@@ -25,6 +25,11 @@ export const FooterCima = styled.section`
     filter: drop-shadow(0px 0px 10px #5a880e);
   }
 
+  .footer_link:focus {
+    outline: 0;
+    filter: drop-shadow(0px 0px 10px #5a880e);
+  }
+
   @media (max-width: 950px) {
     flex-direction: column;
     padding: 54px 0;
@@ -61,7 +66,7 @@ export const FooteBaixo = styled.section`
     width: max-content;
   }
 
-  .span {
+  .span_footer {
     font-size: 1.6rem;
     font-weight: 700;
   }

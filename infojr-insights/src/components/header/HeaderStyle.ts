@@ -11,7 +11,7 @@ export const Header = styled.header`
   padding: 15px 12%;
   height: max-content;
   background: #191919;
-  z-index: 1;
+  z-index: 2;
 
   .nav_desktop {
     display: flex;
@@ -29,42 +29,40 @@ export const Header = styled.header`
     font-weight: 700;
   }
 
+  .header_link.ativo:hover {
+    color: #7cb124;
+  }
+
   .header_link:hover {
     color: #badc41;
   }
 
-  .btn {
-    background: #7cb124;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    font-size: 1.6rem;
-  }
-
-  .btn_menu {
-    background: none;
-    color: #fff;
-    font-size: 1.5rem;
-  }
-
-  .btn_fechar {
-    color: #7cb124;
-  }
-
-  .btn_abrir,
-  .btn_fechar {
-    cursor: pointer;
+  .header_link:focus {
+    color: #badc41;
   }
 
   .header_btn {
     padding: 10px 25px;
     border-radius: 8px;
     font-size: 1.4rem;
-    background: #7cb124;
-    transition: 0.3s;
   }
 
+  .btn_menu {
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+  }
+
+  .btn_fechar {
+    color: #7cb124;
+  }
   .header_btn:hover {
+    background: #5a880e;
+  }
+
+  .header_btn:focus {
+    outline: 0;
     background: #5a880e;
   }
 
@@ -78,6 +76,8 @@ export const Header = styled.header`
   }
 
   @media (max-width: 720px) {
+    height: 60px;
+    background: #1a1c17;
     .header_logo {
       width: 60px;
     }
@@ -132,16 +132,21 @@ export const Header = styled.header`
       visibility: visible;
       top: 60px;
     }
-    .btn_fechar {
+    .btn_menu-fechar {
       display: none;
     }
 
-    .nav_desktop.ativo .btn_abrir {
+    .nav_desktop.ativo .btn_menu-abrir {
       display: none;
     }
 
-    .nav_desktop.ativo .btn_fechar {
+    .nav_desktop.ativo .btn_menu-fechar {
       display: block;
+      color: #7cb124;
+    }
+
+    .fechar-icon {
+      color: #7cb124;
     }
   }
 `

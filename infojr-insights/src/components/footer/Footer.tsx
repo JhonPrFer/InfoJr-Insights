@@ -13,7 +13,7 @@ import Logo from './images/Logo InfoJr.svg'
 const Footer = () => (
   <S.Footer>
     <S.FooterCima>
-      <a className="logo_footer" href="www.google.com">
+      <a className="logo_footer" target="_blanck" href="https://infojr.com.br/">
         <Image src={Logo} alt="Logo" />
       </a>
       <div className="redes_sociais">
@@ -77,8 +77,8 @@ const Footer = () => (
     </S.FooterCima>
     <S.FooteBaixo>
       <p className="footer_info">
-        <span className="span">Email</span>: contato@infojr.com.br |{' '}
-        <span className="span">Telefone</span>: 71 3283-6268
+        <span className="span_footer">Email</span>: contato@infojr.com.br |{' '}
+        <span className="span_footer">Telefone</span>: 71 3283-6268
       </p>
       <p className="footer_info">
         Copyright @ 2020 INFO JR UFBA - Av. Adhemar de Barros, Ondina –
