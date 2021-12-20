@@ -16,19 +16,20 @@ const Ideia = () => (
         etiam adipiscing amet, quis eleifend sed nibh mattis. Ultrices iaculis
         orci senectus cursus auctor nunc. Facilisi pretium ac malesuada nec nibh
         dignissim libero egestas. Dignissim nunc diam integer vel in a sociis.
-        Cras a elit facilisi placerat est mauris consequat eget. Aliquet vel
-        adipiscing purus, eu turpis. Egestas sit varius pellentesque sed cursus
-        sollicitudin. Id mi quis ornare enim et. Urna aenean risus eu risus
-        venenatis sit quam massa. In nam fermentum donec viverra est. Ornare sit
-        lectus ipsum accumsan senectus cras facilisis. Suspendisse sit metus,
-        faucibus bibendum diam fermentum commodo maecenas. Diam vel eget diam ac
-        nunc adipiscing quisque convallis mattis. Amet, pharetra dolor in
-        faucibus in diam facilisi mi. Tempus id maecenas porttitor condimentum
-        massa faucibus egestas. Facilisis pretium pellentesque fringilla sit
-        dignissim dignissim etiam. Id eget curabitur leo facilisi nec volutpat
-        scelerisque.
+        Cras a elit facilisi placerat est mauris consequat eget.
+        <br />
+        <br /> Aliquet vel adipiscing purus, eu turpis. Egestas sit varius
+        pellentesque sed cursus sollicitudin. Id mi quis ornare enim et. Urna
+        aenean risus eu risus venenatis sit quam massa. In nam fermentum donec
+        viverra est. Ornare sit lectus ipsum accumsan senectus cras facilisis.
+        Suspendisse sit metus, faucibus bibendum diam fermentum commodo
+        maecenas. Diam vel eget diam ac nunc adipiscing quisque convallis
+        mattis. Amet, pharetra dolor in faucibus in diam facilisi mi. Tempus id
+        maecenas porttitor condimentum massa faucibus egestas. Facilisis pretium
+        pellentesque fringilla sit dignissim dignissim etiam. Id eget curabitur
+        leo facilisi nec volutpat scelerisque.
       </p>
-      <a href="/#" className="btn_ideia">
+      <a href="/#" className="btn_ideia btn">
         Saiba mais
       </a>
     </article>

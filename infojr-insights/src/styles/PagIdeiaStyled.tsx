@@ -3,10 +3,11 @@ import styled from 'styled-components'
 const PagIdeiaStyled = styled.section`
   display: flex;
   flex-direction: column;
-  gap: 120px;
   padding-top: 84px;
   color: #fff;
-  background-color: #1a1c17;
+  @media (max-width: 720px) {
+    padding-top: 60px;
+  }
 `
 
 export default PagIdeiaStyled
