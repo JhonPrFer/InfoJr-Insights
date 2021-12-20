@@ -24,9 +24,8 @@ export const Ideia = styled.article`
 
   .btn_ideia {
     box-sizing: border-box;
-    width: 290px;
     height: 44px;
-    padding: 10px 95px;
+    padding: 10px 100px;
   }
 
   .btn_ideia:hover {
@@ -39,7 +38,9 @@ export const Ideia = styled.article`
   }
 
   @media (max-width: 720px) {
-    
+    .btn_ideia {
+      padding: 10px 90px;
+    }
   }
 `
 
