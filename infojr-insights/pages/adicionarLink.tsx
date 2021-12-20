@@ -4,14 +4,6 @@ import Head from 'next/head'
 import Form from '../src/components/form/Form'
 import AdicionarLinkStyled from '../src/styles/AdicionarLinkStyled'
 
-function mudaHeader(){
-  
-
-}
-
-mudaHeader()
-
-
 const AdicionarLink: NextPage = () => (
   <AdicionarLinkStyled>
     <Head>

@@ -15,6 +15,14 @@ const AdicionarLinkStyled = styled.section`
     color: #badc41;
     font-size: 3.6rem;
   }
+
+  @media (max-width: 720px) {
+    gap: 60px;
+    padding: calc(60px + 70px) 12%;
+    .titulo_pag {
+      font-size: 2.4rem;
+    }
+  }
 `
 
 export default AdicionarLinkStyled

@@ -25,17 +25,14 @@ const Header = () => {
   }
   return (
     <S.Header>
-      <a className="header_logo" href="http://localhost:3000/#">
+      <a className="header_logo" href="/#">
         <Image src={Logo} alt="Logo da info junior" />
       </a>
       <nav className="nav_desktop" id="nav_desktop">
-        <a
-          className="header_link ativo header-desktop"
-          href="http://localhost:3000"
-        >
+        <a className="header_link ativo header-desktop" href="/#">
           Inicio
         </a>
-        <a className="header_link header-desktop" href="#">
+        <a className="header_link header-desktop" href="/#">
           Todos os links
         </a>
         <button className="btn header_btn header-desktop" onClick={abrePag}>
@@ -58,10 +55,10 @@ const Header = () => {
       </nav>
       <div className="modal_menu" id="modal_menu">
         <nav className="nav_mobile" id="nav_mobile">
-          <a className="header_link ativo" href="http://localhost:3000/#">
+          <a className="header_link ativo" href="/#">
             Inicio
           </a>
-          <a className="header_link" href="#">
+          <a className="header_link" href="/#">
             Todos os links
           </a>
           <button className="btn header_btn" onClick={abrePag}>
