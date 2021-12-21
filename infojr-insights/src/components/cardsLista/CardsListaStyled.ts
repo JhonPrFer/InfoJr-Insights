@@ -11,6 +11,7 @@ export const CardsLista = styled.section`
   padding: 20px;
 
   .card {
+    width: 100%;
     display: grid;
     grid-template-columns: auto 1fr;
     box-sizing: border-box;
@@ -43,16 +44,15 @@ export const CardsLista = styled.section`
   }
 
   .card_titulo {
-    white-space: nowrap;
     overflow: hidden;
     text-overflow: '...';
   }
 
   .card_descricao {
     max-height: 90px;
-    white-space: pre-line;
+    white-space: pre-wrap;
     overflow: hidden;
-    text-overflow: '...';
+    text-overflow: ellipsis;
   }
 
   .card_categoria {
@@ -85,13 +85,10 @@ export const CardsLista = styled.section`
     width: 110%;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1000px) {
+    grid-column: 1;
     .card_image {
       display: none;
-    }
-
-    @media (max-width: 1000px) {
-      grid-column: 1;
     }
   }
 `
