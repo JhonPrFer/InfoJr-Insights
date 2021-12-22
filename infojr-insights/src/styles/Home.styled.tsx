@@ -6,9 +6,10 @@ const HomeStyled = styled.div`
   padding: calc(164px + 90px) 12%;
   background: #1a1c17;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 315px 50%;
   column-gap: 80px;
   color: #fff;
+  justify-content: center;
 
   @media (max-width: 1000px) {
     grid-template-columns: auto;
