@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import * as S from './CardsListaStyled'
 import CardImg from './images/img1.svg'
+import * as S from './LinksGridsStyed'
 
 const ideias = [
   { title: 'Lorem', cat: 'curso', dsc: 'lorem' },
@@ -17,12 +17,12 @@ const ideias = [
   {
     title: 'Lorem',
     cat: 'site',
-    dsc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu fermentum feugiat ipsum in in quis. Mattis sit ac, posuere eu tellus risus sed leo vel. Purus sagittis, arcu...',
+    dsc: 'Lorem ',
   },
 ]
 
-const CardsLista = () => (
-  <S.CardsLista>
+const LinksGrid = () => (
+  <S.LinksGrid>
     {ideias.map(e => (
       <article className="card">
         <div className="card_image">
@@ -38,7 +38,7 @@ const CardsLista = () => (
         </Link>
       </article>
     ))}
-  </S.CardsLista>
+  </S.LinksGrid>
 )
 
-export default CardsLista
+export default LinksGrid
