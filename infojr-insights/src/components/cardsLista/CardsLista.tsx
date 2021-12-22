@@ -5,26 +5,28 @@ import * as S from './CardsListaStyled'
 import CardImg from './images/img1.svg'
 
 const ideias = [
-  { title: 'Lorem', cat: 'curso', dsc: 'lorem' },
+  { title: 'Lorem', cat: 'curso', dsc: 'lorem', key: 0 },
   {
     title: 'Lorem',
     cat: 'palestra',
     dsc: 'lorem',
+    key: 1,
   },
-  { title: 'Lorem', cat: 'site', dsc: 'lorem' },
-  { title: 'Lorem', cat: 'site', dsc: 'lorem' },
-  { title: 'Lorem', cat: 'site', dsc: 'lorem' },
+  { title: 'Lorem', cat: 'site', dsc: 'lorem', key: 2 },
+  { title: 'Lorem', cat: 'site', dsc: 'lorem', key: 3 },
+  { title: 'Lorem', cat: 'site', dsc: 'lorem', key: 4 },
   {
     title: 'Lorem',
     cat: 'site',
     dsc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu fermentum feugiat ipsum in in quis. Mattis sit ac, posuere eu tellus risus sed leo vel. Purus sagittis, arcu...',
+    key: 5,
   },
 ]
 
 const CardsLista = () => (
   <S.CardsLista>
     {ideias.map(e => (
-      <article className="card">
+      <article key={e.key} className="card">
         <div className="card_image">
           <Image src={CardImg} />
         </div>

@@ -32,7 +32,7 @@ const Header = () => {
         <a className="header_link ativo header-desktop" href="/#">
           Inicio
         </a>
-        <a className="header_link header-desktop" href="/#">
+        <a className="header_link header-desktop" href="/todosOsLinks">
           Todos os links
         </a>
         <button className="btn header_btn header-desktop" onClick={abrePag}>

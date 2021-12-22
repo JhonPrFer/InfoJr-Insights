@@ -28,6 +28,7 @@ const TodosOsLinksStyled = styled.section`
     gap: 10px;
     font-size: 1.6rem;
   }
+
   .filtro {
     box-sizing: border-box;
     width: 290px;
@@ -79,6 +80,16 @@ const TodosOsLinksStyled = styled.section`
 
   .pag-atual {
     cursor: auto;
+  }
+
+  @media (max-width: 720px) {
+    .conteudo_pag {
+      align-items: center;
+    }
+
+    .botoes_pag {
+      display: none;
+    }
   }
 `
 export default TodosOsLinksStyled

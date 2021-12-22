@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const HomeStyled = styled.div`
+const Home = styled.div`
   box-sizing: border-box;
   width: 100%;
   padding: calc(164px + 90px) 12%;
@@ -23,4 +23,4 @@ const HomeStyled = styled.div`
   }
 `
 
-export default HomeStyled
+export default Home

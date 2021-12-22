@@ -29,8 +29,8 @@ const TodosOsLinks: NextPage = () => (
             Livro
           </option>
         </select>
-        <LinksGrid />
       </label>
+      <LinksGrid />
       <nav className="botoes_pag">
         <button className="btn_links">
           <Image src={Prev} />

@@ -23,6 +23,8 @@ export const Ideia = styled.article`
   }
 
   .btn_ideia {
+    display: flex;
+    align-items: center;
     box-sizing: border-box;
     height: 44px;
     padding: 10px 100px;
