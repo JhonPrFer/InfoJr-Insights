@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import * as S from './CardsListaStyled'
 import CardImg from './images/img1.svg'
+import * as S from './LinksGridsStyed'
 
 const ideias = [
   { title: 'Lorem', cat: 'curso', dsc: 'lorem', key: 0 },
@@ -23,8 +23,8 @@ const ideias = [
   },
 ]
 
-const CardsLista = () => (
-  <S.CardsLista>
+const LinksGrid = () => (
+  <S.LinksGrid>
     {ideias.map(e => (
       <article key={e.key} className="card">
         <div className="card_image">
@@ -35,12 +35,12 @@ const CardsLista = () => (
         <p className="card_descricao">{e.dsc}</p>
         <Link as={`/${e.title}`} href="[pagIdeia]">
           <a className="card_link" href="/">
-            Ir para a ideia
+            Ir para link
           </a>
         </Link>
       </article>
     ))}
-  </S.CardsLista>
+  </S.LinksGrid>
 )
 
-export default CardsLista
+export default LinksGrid

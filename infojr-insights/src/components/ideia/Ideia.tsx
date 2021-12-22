@@ -8,7 +8,7 @@ const Ideia = () => {
   const router = useRouter()
   return (
     <S.Ideia>
-      <Image src={Imagem1} />
+      <Image className="ideia_img" src={Imagem1} />
       <article className="conteudo_ideia">
         <h2 className="titulo_ideia">{router.query.pagIdeia}</h2>
         <p className="descricao_ideia">
@@ -33,7 +33,7 @@ const Ideia = () => {
           pretium pellentesque fringilla sit dignissim dignissim etiam. Id eget
           curabitur leo facilisi nec volutpat scelerisque.
         </p>
-        <a href="/#" className="btn_ideia btn">
+        <a target="_blank" href="/#" className="btn_ideia btn">
           Saiba mais
         </a>
       </article>
