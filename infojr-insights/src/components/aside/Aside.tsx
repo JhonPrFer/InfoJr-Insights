@@ -23,10 +23,12 @@ const Aside = () => (
       </p>
     </h2>
     <div className="botoes">
-      <button className="btn btn_aside">Adicionar link</button>
-      <button className="btn btn_aside btn_ver-todos">
+      <a className=" btn link_aside" href="adicionarLink">
+        Adicionar link
+      </a>
+      <a className=" btn link_aside link_ver-todos" href="/todosOsLinks">
         Ver todos os links
-      </button>
+      </a>
     </div>
     <p className="aside_end">
       Feito com 💚

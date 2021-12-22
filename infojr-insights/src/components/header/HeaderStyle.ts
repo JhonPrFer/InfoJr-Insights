@@ -41,10 +41,15 @@ export const Header = styled.header`
     color: #badc41;
   }
 
-  .header_btn {
+  .link-btn {
+    background: #7cb124;
     padding: 10px 25px;
     border-radius: 8px;
     font-size: 1.4rem;
+    color: #fff;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
   }
 
   .btn_menu {
@@ -57,11 +62,11 @@ export const Header = styled.header`
   .btn_fechar {
     color: #7cb124;
   }
-  .header_btn:hover {
+  .link-btn:hover {
     background: #5a880e;
   }
 
-  .header_btn:focus {
+  .link-btn:focus {
     outline: 0;
     background: #5a880e;
   }

@@ -19,10 +19,6 @@ const Header = () => {
     navDesktop?.classList.toggle('ativo')
     body?.classList.toggle('ativo')
   }
-
-  function abrePag() {
-    location.href = 'http://localhost:3000/adicionarLink'
-  }
   return (
     <S.Header>
       <a className="header_logo" href="/#">
@@ -35,9 +31,9 @@ const Header = () => {
         <a className="header_link header-desktop" href="/todosOsLinks">
           Todos os links
         </a>
-        <button className="btn header_btn header-desktop" onClick={abrePag}>
+        <a className="link-btn header-desktop" href="/adicionarLink">
           Adicionar link
-        </button>
+        </a>
         <button
           className="btn_menu btn_menu-abrir header-mobile"
           aria-label="abrir menu"
@@ -58,12 +54,12 @@ const Header = () => {
           <a className="header_link ativo" href="/#">
             Inicio
           </a>
-          <a className="header_link" href="/#">
+          <a className="header_link" href="/todosOsLinks">
             Todos os links
           </a>
-          <button className="btn header_btn" onClick={abrePag}>
+          <a className="link-btn" href="/adicionarLink">
             Adicionar link
-          </button>
+          </a>
         </nav>
       </div>
     </S.Header>
