@@ -2,6 +2,8 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 import * as S from './HeaderStyle'
 import Logo from './images/Logo InfoJr.svg'
@@ -9,7 +11,7 @@ import Logo from './images/Logo InfoJr.svg'
 library.add(faBars, faTimes)
 
 const Header = () => {
-  function toggleMenu() {
+  function toggleMenu(): void {
     const modalMenu = document.querySelector('#modal_menu')
     const navMobile = document.querySelector('#nav_mobile')
     const navDesktop = document.querySelector('#nav_desktop')
@@ -19,21 +21,46 @@ const Header = () => {
     navDesktop?.classList.toggle('ativo')
     body?.classList.toggle('ativo')
   }
+
+  const router = useRouter()
+
   return (
     <S.Header>
-      <a className="header_logo" href="/#">
-        <Image src={Logo} alt="Logo da info junior" />
-      </a>
+      <Link as="/" href="/">
+        <a className="header_logo" id="logo_link" href="/">
+          <Image src={Logo} alt="Logo da info junior" />
+        </a>
+      </Link>
       <nav className="nav_desktop" id="nav_desktop">
-        <a className="header_link ativo header-desktop" href="/#">
-          Inicio
-        </a>
-        <a className="header_link header-desktop" href="/todosOsLinks">
-          Todos os links
-        </a>
-        <a className="link-btn header-desktop" href="/adicionarLink">
-          Adicionar link
-        </a>
+        <Link as="/" href="/">
+          <a
+            className={
+              router.pathname === '/'
+                ? 'ativo header_link header-desktop'
+                : 'header_link header-desktop'
+            }
+            href="/#"
+          >
+            Início
+          </a>
+        </Link>
+        <Link as="/todosOsLinks" href="/todosOsLinks">
+          <a
+            className={
+              router.pathname === '/todosOsLinks'
+                ? 'ativo header_link header-desktop'
+                : 'header_link header-desktop'
+            }
+            href="/todosOsLinks"
+          >
+            Todos os links
+          </a>
+        </Link>
+        <Link as="/adicionarLink" href="/adicionarLink">
+          <a className="link-btn header-desktop" href="/adicionarLink">
+            Adicionar link
+          </a>
+        </Link>
         <button
           className="btn_menu btn_menu-abrir header-mobile"
           aria-label="abrir menu"
@@ -51,15 +78,40 @@ const Header = () => {
       </nav>
       <div className="modal_menu" id="modal_menu">
         <nav className="nav_mobile" id="nav_mobile">
-          <a className="header_link ativo" href="/#">
-            Inicio
-          </a>
-          <a className="header_link" href="/todosOsLinks">
-            Todos os links
-          </a>
-          <a className="link-btn" href="/adicionarLink">
-            Adicionar link
-          </a>
+          <Link as="/" href="/">
+            <a
+              className={
+                router.pathname === '/' ? 'ativo header_link' : 'header_link'
+              }
+              onClick={toggleMenu}
+              href="/"
+            >
+              Início
+            </a>
+          </Link>
+          <Link as="/todosOsLinks" href="/todosOsLinks">
+            <a
+              className={
+                router.pathname === '/todosOsLinks'
+                  ? 'ativo header_link'
+                  : 'header_link'
+              }
+              onClick={toggleMenu}
+              href="/todosOsLinks"
+            >
+              Todos os links
+            </a>
+          </Link>
+          <Link as="/adicionarLink" href="/adicionarLink">
+            <a
+              className="link-btn"
+              id="header_link"
+              onClick={toggleMenu}
+              href="/adicionarLink"
+            >
+              Adicionar link
+            </a>
+          </Link>
         </nav>
       </div>
     </S.Header>

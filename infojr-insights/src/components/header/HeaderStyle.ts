@@ -24,13 +24,9 @@ export const Header = styled.header`
     font-size: 1.6rem;
   }
 
-  .header_link.ativo {
+  .ativo {
     color: #7cb124;
     font-weight: 700;
-  }
-
-  .header_link.ativo:hover {
-    color: #7cb124;
   }
 
   .header_link:hover {

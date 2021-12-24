@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 import * as S from './AsideStyle'
 import Logo from './images/Logo.svg'
@@ -23,12 +24,16 @@ const Aside = () => (
       </p>
     </h2>
     <div className="botoes">
-      <a className=" btn link_aside" href="adicionarLink">
-        Adicionar link
-      </a>
-      <a className=" btn link_aside link_ver-todos" href="/todosOsLinks">
-        Ver todos os links
-      </a>
+      <Link as="/adicionarLink" href="/adicionarLink">
+        <a className=" btn link_aside" href="adicionarLink">
+          Adicionar link
+        </a>
+      </Link>
+      <Link as="/todosOsLinks" href="/todosOsLinks">
+        <a className=" btn link_aside link_ver-todos" href="/todosOsLinks">
+          Ver todos os links
+        </a>
+      </Link>
     </div>
     <p className="aside_end">
       Feito com 💚

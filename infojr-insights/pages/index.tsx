@@ -6,8 +6,10 @@ import HomeStyled from '../src/styles/Home.styled'
 
 const Home: NextPage = () => (
   <HomeStyled>
-    <Aside />
-    <CardsLista />
+    <section className="home">
+      <Aside />
+      <CardsLista />
+    </section>
   </HomeStyled>
 )
 
