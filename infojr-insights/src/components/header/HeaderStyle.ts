@@ -13,6 +13,10 @@ export const Header = styled.header`
   background: #191919;
   z-index: 2;
 
+  .header_logo {
+    cursor: pointer;
+  }
+
   .nav_desktop {
     display: flex;
     gap: 30px;
@@ -22,6 +26,7 @@ export const Header = styled.header`
   .header_link {
     color: rgba(255, 255, 255, 0.5);
     font-size: 1.6rem;
+    cursor: pointer;
   }
 
   .ativo {

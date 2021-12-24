@@ -24,15 +24,11 @@ const Aside = () => (
       </p>
     </h2>
     <div className="botoes">
-      <Link as="/adicionarLink" href="/adicionarLink">
-        <a className=" btn link_aside" href="adicionarLink">
-          Adicionar link
-        </a>
+      <Link as="/adicionarLink" href="/adicionarLink" passHref>
+        <p className=" btn link_aside">Adicionar link</p>
       </Link>
-      <Link as="/todosOsLinks" href="/todosOsLinks">
-        <a className=" btn link_aside link_ver-todos" href="/todosOsLinks">
-          Ver todos os links
-        </a>
+      <Link as="/todosOsLinks" href="/todosOsLinks" passHref>
+        <p className=" btn link_aside link_ver-todos">Ver todos os links</p>
       </Link>
     </div>
     <p className="aside_end">

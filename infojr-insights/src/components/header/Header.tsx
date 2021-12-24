@@ -24,42 +24,43 @@ const Header = () => {
 
   const router = useRouter()
 
+  const mobileLink = document.querySelectorAll('#mobile_link')
+  mobileLink.forEach(link => {
+    link.addEventListener('click', toggleMenu)
+  })
+
   return (
     <S.Header>
-      <Link as="/" href="/">
-        <a className="header_logo" id="logo_link" href="/">
+      <Link as="/" href="/" passHref>
+        <h1 className="header_logo">
           <Image src={Logo} alt="Logo da info junior" />
-        </a>
+        </h1>
       </Link>
       <nav className="nav_desktop" id="nav_desktop">
-        <Link as="/" href="/">
-          <a
+        <Link as="/" href="/" passHref>
+          <p
             className={
               router.pathname === '/'
                 ? 'ativo header_link header-desktop'
                 : 'header_link header-desktop'
             }
-            href="/#"
           >
             Início
-          </a>
+          </p>
         </Link>
-        <Link as="/todosOsLinks" href="/todosOsLinks">
-          <a
+        <Link as="/todosOsLinks" href="/todosOsLinks" passHref>
+          <p
             className={
               router.pathname === '/todosOsLinks'
                 ? 'ativo header_link header-desktop'
                 : 'header_link header-desktop'
             }
-            href="/todosOsLinks"
           >
             Todos os links
-          </a>
+          </p>
         </Link>
-        <Link as="/adicionarLink" href="/adicionarLink">
-          <a className="link-btn header-desktop" href="/adicionarLink">
-            Adicionar link
-          </a>
+        <Link as="/adicionarLink" href="/adicionarLink" passHref>
+          <p className="link-btn header-desktop">Adicionar link</p>
         </Link>
         <button
           className="btn_menu btn_menu-abrir header-mobile"
@@ -78,39 +79,32 @@ const Header = () => {
       </nav>
       <div className="modal_menu" id="modal_menu">
         <nav className="nav_mobile" id="nav_mobile">
-          <Link as="/" href="/">
-            <a
+          <Link as="/" href="/" passHref>
+            <p
               className={
                 router.pathname === '/' ? 'ativo header_link' : 'header_link'
               }
-              onClick={toggleMenu}
-              href="/"
+              id="mobile_link"
             >
               Início
-            </a>
+            </p>
           </Link>
-          <Link as="/todosOsLinks" href="/todosOsLinks">
-            <a
+          <Link as="/todosOsLinks" href="/todosOsLinks" passHref>
+            <p
               className={
                 router.pathname === '/todosOsLinks'
                   ? 'ativo header_link'
                   : 'header_link'
               }
-              onClick={toggleMenu}
-              href="/todosOsLinks"
+              id="mobile_link"
             >
               Todos os links
-            </a>
+            </p>
           </Link>
-          <Link as="/adicionarLink" href="/adicionarLink">
-            <a
-              className="link-btn"
-              id="header_link"
-              onClick={toggleMenu}
-              href="/adicionarLink"
-            >
+          <Link as="/adicionarLink" href="/adicionarLink" passHref>
+            <p className="link-btn" id="mobile_link">
               Adicionar link
-            </a>
+            </p>
           </Link>
         </nav>
       </div>

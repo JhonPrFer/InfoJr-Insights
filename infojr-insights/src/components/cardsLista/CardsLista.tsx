@@ -33,10 +33,8 @@ const CardsLista = () => (
         <h3 className="card_titulo">{e.title}</h3>
         <p className="card_categoria">{e.cat}</p>
         <p className="card_descricao">{e.dsc}</p>
-        <Link as={`/${e.title}`} href="[pagIdeia]">
-          <a className="card_link" href="/">
-            Ir para a ideia
-          </a>
+        <Link as={`/${e.title}`} href="[pagIdeia]" passHref>
+          <p className="card_link">Ir para a ideia</p>
         </Link>
       </article>
     ))}
