@@ -82,6 +82,7 @@ export default createGlobalStyle`
     padding: 0 10px 2px 0;
     margin-bottom: 0;
     outline: 0;
+    cursor: pointer;
   }
 
   .card_link::after {
