@@ -33,8 +33,12 @@ const LinksGrid = () => (
         <h3 className="card_titulo">{e.title}</h3>
         <p className="card_categoria">{e.cat}</p>
         <p className="card_descricao">{e.dsc}</p>
-        <Link as={`/${e.title}`} href="[pagIdeia]" passHref>
-          <p className="card_link">Ir para link</p>
+        <Link
+          as={`/${e.title}/${e.dsc}/${e.cat}`}
+          href="/[Ideia]/[descricao]/[pagIdeia]"
+          passHref
+        >
+          <p className="card_link">Ir para a ideia</p>
         </Link>
       </article>
     ))}
