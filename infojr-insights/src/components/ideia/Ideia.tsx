@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import * as S from './IdeiaStyled'
@@ -33,9 +34,9 @@ const Ideia = () => {
           pretium pellentesque fringilla sit dignissim dignissim etiam. Id eget
           curabitur leo facilisi nec volutpat scelerisque.
         </p>
-        <a target="_blank" href="/#" className="btn_ideia btn">
-          Saiba mais
-        </a>
+        <Link as="/" href="/" passHref>
+          <p className="btn_ideia btn">Saiba mais</p>
+        </Link>
       </article>
     </S.Ideia>
   )

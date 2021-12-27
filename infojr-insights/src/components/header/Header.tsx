@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useState } from 'react'
 
 import * as S from './HeaderStyle'
 import Logo from './images/Logo InfoJr.svg'
@@ -11,7 +12,9 @@ import Logo from './images/Logo InfoJr.svg'
 library.add(faBars, faTimes)
 
 const Header = () => {
-  function toggleMenu(): void {
+  const [menuAtivo, setMenuAtivo] = useState(false)
+
+  /*  function toggleMenu(): void {
     const modalMenu = document.querySelector('#modal_menu')
     const navMobile = document.querySelector('#nav_mobile')
     const navDesktop = document.querySelector('#nav_desktop')
@@ -20,15 +23,15 @@ const Header = () => {
     navMobile?.classList.toggle('ativo')
     navDesktop?.classList.toggle('ativo')
     body?.classList.toggle('ativo')
-  }
+  } */
 
   const router = useRouter()
 
-  const mobileLink = document.querySelectorAll('#mobile_link')
+  /* const mobileLink = document.querySelectorAll('#mobile_link')
   mobileLink.forEach(link => {
     link.addEventListener('click', toggleMenu)
   })
-
+ */
   return (
     <S.Header>
       <Link as="/" href="/" passHref>
@@ -36,7 +39,7 @@ const Header = () => {
           <Image src={Logo} alt="Logo da info junior" />
         </h1>
       </Link>
-      <nav className="nav_desktop" id="nav_desktop">
+      <nav className={menuAtivo ? 'nav_desktop ativo' : 'nav_desktop'}>
         <Link as="/" href="/" passHref>
           <p
             className={
@@ -65,20 +68,20 @@ const Header = () => {
         <button
           className="btn_menu btn_menu-abrir header-mobile"
           aria-label="abrir menu"
-          onClick={toggleMenu}
+          onClick={() => setMenuAtivo(!menuAtivo)}
         >
           <FontAwesomeIcon icon="bars" className="header-mobile btn_abrir" />
         </button>
         <button
           className="btn_menu btn_menu-fechar header-mobile"
           aria-label="fechar-menu"
-          onClick={toggleMenu}
+          onClick={() => setMenuAtivo(!menuAtivo)}
         >
           <FontAwesomeIcon icon="times" className="header-mobile fechar-icon" />
         </button>
       </nav>
-      <div className="modal_menu" id="modal_menu">
-        <nav className="nav_mobile" id="nav_mobile">
+      <div className={menuAtivo ? 'modal_menu ativo' : 'modal_menu'}>
+        <nav className={menuAtivo ? 'nav_mobile ativo' : 'nav_mobile'}>
           <Link as="/" href="/" passHref>
             <p
               className={
