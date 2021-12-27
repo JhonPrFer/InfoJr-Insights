@@ -16,6 +16,24 @@ const AdicionarLinkStyled = styled.section`
     font-size: 3.6rem;
   }
 
+  .popup {
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    top: 86px;
+    padding: 20px 12% 15px;
+    background: #7cb124;
+    align-items: center;
+    gap: 25px;
+    border-bottom: 5px solid #728911;
+  }
+
+  .popup_text {
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
   @media (max-width: 720px) {
     gap: 60px;
     padding: calc(60px + 70px) 12%;
