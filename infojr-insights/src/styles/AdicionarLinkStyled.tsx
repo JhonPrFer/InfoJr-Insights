@@ -19,8 +19,13 @@ const AdicionarLinkStyled = styled.section`
   .popup {
     position: absolute;
     width: 100%;
-    top: 83px;
+    top: -80px;
     right: 0;
+    transition: 0.2s;
+  }
+
+  .popup.ativo {
+    top: 83px;
   }
 
   .popup_conteudo {
@@ -46,8 +51,16 @@ const AdicionarLinkStyled = styled.section`
   .loading {
     width: 100%;
     height: 5px;
+  }
+
+  .loading.ativo {
     background-color: #badc41;
-    animation: loading 3s forwards;
+    animation: loading 4s forwards;
+  }
+
+  .btn_fechar-popup {
+    background: none;
+    cursor: pointer;
   }
 
   @keyframes loading {
@@ -64,6 +77,14 @@ const AdicionarLinkStyled = styled.section`
     padding: calc(60px + 70px) 12%;
     .titulo_pag {
       font-size: 2.4rem;
+    }
+
+    .popup_conteudo {
+      padding: 10px 12%;
+    }
+
+    .popup.ativo {
+      top: 60px;
     }
   }
 `
