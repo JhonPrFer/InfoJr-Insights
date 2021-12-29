@@ -8,8 +8,13 @@ import AdicionarLinkStyled from '../src/styles/AdicionarLinkStyled'
 const AdicionarLink: NextPage = () => (
   <AdicionarLinkStyled>
     <div className="popup">
-      <Image src={Close} />
-      <p className="popup_text"> Link cadastrado com sucesso</p>
+      <div className="popup_conteudo">
+        <Image src={Close} />
+        <p className="popup_text"> Link cadastrado com sucesso</p>
+      </div>
+      <div className="loading_container">
+        <div className="loading" />
+      </div>
     </div>
     <h2 className="titulo_pag">Adicionar Link</h2>
     <Form />

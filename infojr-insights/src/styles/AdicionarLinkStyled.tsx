@@ -17,8 +17,14 @@ const AdicionarLinkStyled = styled.section`
   }
 
   .popup {
-    display: flex;
     position: absolute;
+    width: 100%;
+    top: 83px;
+    right: 0;
+  }
+
+  .popup_conteudo {
+    display: flex;
     box-sizing: border-box;
     width: 100%;
     top: 86px;
@@ -26,12 +32,31 @@ const AdicionarLinkStyled = styled.section`
     background: #7cb124;
     align-items: center;
     gap: 25px;
-    border-bottom: 5px solid #728911;
   }
 
   .popup_text {
     font-size: 1.4rem;
     color: #fff;
+  }
+
+  .loading_container {
+    background-color: #728911;
+  }
+
+  .loading {
+    width: 100%;
+    height: 5px;
+    background-color: #badc41;
+    animation: loading 3s forwards;
+  }
+
+  @keyframes loading {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
   }
 
   @media (max-width: 720px) {
