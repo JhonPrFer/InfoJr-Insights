@@ -65,10 +65,22 @@ const TodosOsLinksStyled = styled.section`
     cursor: pointer;
   }
 
-  .btn_lastpage {
+  .btn_muda-pag:hover {
+    background: #7cb124;
+    transition: 0.3s;
+  }
+
+  .btn_muda-pag.disable,
+  .btn_muda-pag.disable:hover {
+    cursor: auto;
+    background: none;
+  }
+
+  .btn_lastpag {
     background: #7cb124;
     color: #fff;
     border: 1px solid #badc41;
+    transition: 0.3s;
   }
   .nav_index {
     width: 60px;

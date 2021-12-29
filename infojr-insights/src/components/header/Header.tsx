@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,25 +15,8 @@ library.add(faBars, faTimes)
 
 const Header = () => {
   const [menuAtivo, setMenuAtivo] = useState(false)
-
-  /*  function toggleMenu(): void {
-    const modalMenu = document.querySelector('#modal_menu')
-    const navMobile = document.querySelector('#nav_mobile')
-    const navDesktop = document.querySelector('#nav_desktop')
-    const body = document.querySelector('#body')
-    modalMenu?.classList.toggle('ativo')
-    navMobile?.classList.toggle('ativo')
-    navDesktop?.classList.toggle('ativo')
-    body?.classList.toggle('ativo')
-  } */
-
   const router = useRouter()
 
-  /* const mobileLink = document.querySelectorAll('#mobile_link')
-  mobileLink.forEach(link => {
-    link.addEventListener('click', toggleMenu)
-  })
- */
   return (
     <S.Header>
       <Link as="/" href="/" passHref>
@@ -87,6 +72,7 @@ const Header = () => {
               className={
                 router.pathname === '/' ? 'ativo header_link' : 'header_link'
               }
+              onClick={() => setMenuAtivo(!menuAtivo)}
               id="mobile_link"
             >
               Início
@@ -99,13 +85,13 @@ const Header = () => {
                   ? 'ativo header_link'
                   : 'header_link'
               }
-              id="mobile_link"
+              onClick={() => setMenuAtivo(!menuAtivo)}
             >
               Todos os links
             </p>
           </Link>
           <Link as="/adicionarLink" href="/adicionarLink" passHref>
-            <p className="link-btn" id="mobile_link">
+            <p className="link-btn" onClick={() => setMenuAtivo(!menuAtivo)}>
               Adicionar link
             </p>
           </Link>
