@@ -38,19 +38,19 @@ const Form = () => {
             required
           >
             <option className="option" value="0">
-              --
+              Front-end
             </option>
             <option className="option" value="1">
-              Site
+              Back-end
             </option>
             <option className="option" value="2">
-              Palestra
+              Mobile
             </option>
             <option className="option" value="3">
-              Curso
+              Design
             </option>
             <option className="option" value="4">
-              Livro
+              Miscelânea
             </option>
           </select>
         </label>

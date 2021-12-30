@@ -20,16 +20,19 @@ const TodosOsLinks: NextPage = () => {
               Todos
             </option>
             <option className="filtro_option" value="1">
-              Site
+              Front-end
             </option>
             <option className="filtro_option" value="2">
-              Palestra
+              Back-end
             </option>
             <option className="filtro_option" value="3">
-              Curso
+              Mobile
             </option>
-            <option className="filtro_option" value="3">
-              Livro
+            <option className="filtro_option" value="4">
+              Design
+            </option>
+            <option className="filtro_option" value="5">
+              Miscelânea
             </option>
           </select>
         </label>

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const LinksGrid = styled.article`
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: 1fr 1fr;
   width: 100%;
   gap: 25px;
 
