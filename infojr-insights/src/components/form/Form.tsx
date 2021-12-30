@@ -37,20 +37,23 @@ const Form = () => {
             className="categorias input"
             required
           >
-            <option className="option" value="0">
+            <option className="option" selected disabled value="--">
               --
             </option>
-            <option className="option" value="1">
-              Site
+            <option className="option" value="Front-end">
+              Front-end
             </option>
-            <option className="option" value="2">
-              Palestra
+            <option className="option" value="Back-end">
+              Back-end
             </option>
-            <option className="option" value="3">
-              Curso
+            <option className="option" value="Mobile">
+              Mobile
             </option>
-            <option className="option" value="4">
-              Livro
+            <option className="option" value="Design">
+              Design
+            </option>
+            <option className="option" value="Miscelânea">
+              Miscelânea
             </option>
           </select>
         </label>

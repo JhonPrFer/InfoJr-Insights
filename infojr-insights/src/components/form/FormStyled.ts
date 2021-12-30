@@ -36,9 +36,6 @@ export const Form = styled.form`
     color: #eee;
   }
 
-  .categorias {
-  }
-
   .option {
     font-size: 1.6rem;
     color: #fff;
