@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -7,7 +7,7 @@ import Prox from '../public/images/prox.svg'
 import LinksGrid from '../src/components/linksGrid/LinksGrid'
 import TodosOsLinksStyled from '../src/styles/TodosOsLinkStyled'
 
-const TodosOsLinks: NextPage = () => {
+const TodosOsLinks = ({ ideias }: Props) => {
   const [linkPag, setLinkPag] = useState(1)
   return (
     <TodosOsLinksStyled>
@@ -36,7 +36,7 @@ const TodosOsLinks: NextPage = () => {
             </option>
           </select>
         </label>
-        <LinksGrid />
+        <LinksGrid ideias={ideias} />
         <nav className="botoes_pag">
           <button
             className={
@@ -89,3 +89,22 @@ const TodosOsLinks: NextPage = () => {
 }
 
 export default TodosOsLinks
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  const data: Ideia[] = await res.json()
+
+  return {
+    props: { ideias: data },
+  }
+}
+export interface Ideia {
+  id: string
+  name: string
+  email: string
+  phone: string
+}
+
+export interface Props {
+  ideias: Ideia[]
+}
