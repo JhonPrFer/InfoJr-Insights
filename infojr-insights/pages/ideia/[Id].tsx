@@ -6,12 +6,12 @@ import { ParsedUrlQuery } from 'querystring'
 import Imagem1 from '../../public/images/image 1.png'
 import PagIdeiaStyled from '../../src/styles/PagIdeiaStyled'
 
-const PagIdeia = ({ ideia }: Props) => (
+const PagIdeia = ({ ideias }: Ideia[]) => (
   <PagIdeiaStyled>
     <Image className="ideia_img" src={Imagem1} />
     <article className="conteudo_ideia">
-      <h2 className="titulo_ideia">{ideia.name}</h2>
-      <p className="descricao_ideia">{ideia.name}</p>
+      <h2 className="titulo_ideia">{ideias.name}</h2>
+      <p className="descricao_ideia">{ideias.name}</p>
       <Link as="/" href="/" passHref>
         <p className="btn_ideia btn">Saiba mais</p>
       </Link>
@@ -51,7 +51,7 @@ export interface Ideia {
 }
 
 export interface Props {
-  ideia: Ideia[]
+  ideias: Ideia[]
 }
 
 interface Iparams extends ParsedUrlQuery {
