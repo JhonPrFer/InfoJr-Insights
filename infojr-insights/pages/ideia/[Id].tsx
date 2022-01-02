@@ -22,7 +22,7 @@ export default PagIdeia
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
-  const data = await res.json()
+  const data: Array<Ideia> = await res.json()
 
   const paths = data.map(ideia => ({
     params: { Id: `${ideia.id}` },
