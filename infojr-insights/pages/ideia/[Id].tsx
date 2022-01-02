@@ -6,7 +6,7 @@ import { ParsedUrlQuery } from 'querystring'
 import Imagem1 from '../../public/images/image 1.png'
 import PagIdeiaStyled from '../../src/styles/PagIdeiaStyled'
 
-const PagIdeia = ({ ideia }) => (
+const PagIdeia = ({ ideia }: Props) => (
   <PagIdeiaStyled>
     <Image className="ideia_img" src={Imagem1} />
     <article className="conteudo_ideia">
@@ -27,7 +27,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = data.map(ideia => ({
     params: { Id: `${ideia.id}` },
   }))
-
   return {
     paths,
     fallback: false,
@@ -43,7 +42,7 @@ export const getStaticProps: GetStaticProps = async context => {
     props: { ideia: data },
   }
 }
-/* export interface Ideia {
+export interface Ideia {
   id: string
   name: string
   email: string
@@ -51,8 +50,8 @@ export const getStaticProps: GetStaticProps = async context => {
 }
 
 export interface Props {
-  ideia: Ideia[]
-} */
+  ideia: Ideia
+}
 
 interface Iparams extends ParsedUrlQuery {
   Id: string
