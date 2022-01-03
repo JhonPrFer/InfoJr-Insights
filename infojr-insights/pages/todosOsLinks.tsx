@@ -1,4 +1,4 @@
-import { NextPage } from 'next'
+import { GetStaticProps } from 'next'
 import Image from 'next/image'
 import { useState } from 'react'
 
@@ -7,8 +7,9 @@ import Prox from '../public/images/prox.svg'
 import LinksGrid from '../src/components/linksGrid/LinksGrid'
 import TodosOsLinksStyled from '../src/styles/TodosOsLinkStyled'
 
-const TodosOsLinks: NextPage = () => {
+const TodosOsLinks = ({ ideias }: Props) => {
   const [linkPag, setLinkPag] = useState(1)
+
   return (
     <TodosOsLinksStyled>
       <h2 className="titulo_pag">Todos os Links</h2>
@@ -16,27 +17,27 @@ const TodosOsLinks: NextPage = () => {
         <label htmlFor="filtro" className="label_filtro">
           Filtro
           <select name="Filtro" id="filtro" className="filtro">
-            <option className="filtro_option" value="0">
+            <option className="filtro_option" selected value="">
               Todos
             </option>
-            <option className="filtro_option" value="1">
+            <option className="filtro_option" value="Front-end">
               Front-end
             </option>
-            <option className="filtro_option" value="2">
+            <option className="filtro_option" value="Back-end">
               Back-end
             </option>
-            <option className="filtro_option" value="3">
+            <option className="filtro_option" value="Mobile">
               Mobile
             </option>
-            <option className="filtro_option" value="4">
+            <option className="filtro_option" value="Design">
               Design
             </option>
-            <option className="filtro_option" value="5">
+            <option className="filtro_option" value="Miscelânea">
               Miscelânea
             </option>
           </select>
         </label>
-        <LinksGrid />
+        <LinksGrid ideias={ideias} />
         <nav className="botoes_pag">
           <button
             className={
@@ -89,3 +90,24 @@ const TodosOsLinks: NextPage = () => {
 }
 
 export default TodosOsLinks
+
+export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch(`https://apinsights.herokuapp.com/insight`)
+  const data: Ideia[] = await res.json()
+
+  return {
+    props: { ideias: data },
+  }
+}
+export interface Ideia {
+  Id: string
+  Title: string
+  Category: string
+  Link: string
+  Description: string
+  Image_Link: string
+}
+
+export interface Props {
+  ideias: Ideia[]
+}
