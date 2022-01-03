@@ -36,7 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async context => {
   const { Id } = context.params as Iparams
   const res = await fetch(`https://apinsights.herokuapp.com/insight/${Id}`)
-  const data: Ideia = await res.json()
+  const data: Ideia[] = await res.json()
 
   return {
     props: { ideia: data[0] },
