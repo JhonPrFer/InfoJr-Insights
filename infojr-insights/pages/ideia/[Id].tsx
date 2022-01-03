@@ -10,9 +10,9 @@ const PagIdeia = ({ ideia }: Props) => (
   <PagIdeiaStyled>
     <Image className="ideia_img" src={Imagem1} />
     <article className="conteudo_ideia">
-      <h2 className="titulo_ideia">{ideia.name}</h2>
-      <p className="descricao_ideia">{ideia.name}</p>
-      <Link as="/" href="/" passHref>
+      <h2 className="titulo_ideia">{ideia.Title}</h2>
+      <p className="descricao_ideia">{ideia.Description}</p>
+      <Link href={`/${ideia.Link}`} passHref>
         <p className="btn_ideia btn">Saiba mais</p>
       </Link>
     </article>
@@ -21,11 +21,11 @@ const PagIdeia = ({ ideia }: Props) => (
 export default PagIdeia
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  const res = await fetch('https://apinsights.herokuapp.com/insight')
   const data: Array<Ideia> = await res.json()
 
   const paths = data.map(ideia => ({
-    params: { Id: `${ideia.id}` },
+    params: { Id: `${ideia.Id}` },
   }))
   return {
     paths,
@@ -35,20 +35,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async context => {
   const { Id } = context.params as Iparams
-  const res = await fetch(`https://jsonplaceholder.typicode.com/users/${Id}`)
-  const data = await res.json()
+  const res = await fetch(`https://apinsights.herokuapp.com/insight/${Id}`)
+  const data: Ideia = await res.json()
 
   return {
-    props: { ideia: data },
+    props: { ideia: data[0] },
   }
 }
 export interface Ideia {
-  id: string
-  name: string
-  email: string
-  phone: string
+  Id: string
+  Title: string
+  Category: string
+  Link: string
+  Description: string
+  Image_Link: string
 }
-
 export interface Props {
   ideia: Ideia
 }

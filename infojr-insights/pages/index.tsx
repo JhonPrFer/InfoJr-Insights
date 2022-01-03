@@ -16,7 +16,7 @@ const Home = ({ ideias }: Props) => (
 export default Home
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users')
+  const res = await fetch('https://apinsights.herokuapp.com/insight')
   const data: Ideia[] = await res.json()
 
   return {
@@ -24,10 +24,12 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 export interface Ideia {
-  id: string
-  name: string
-  email: string
-  phone: string
+  Id: string
+  Title: string
+  Category: string
+  Link: string
+  Description: string
+  Image_Link: string
 }
 
 export interface Props {
