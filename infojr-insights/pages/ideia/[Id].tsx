@@ -12,7 +12,7 @@ const PagIdeia = ({ ideia }: Props) => (
     <article className="conteudo_ideia">
       <h2 className="titulo_ideia">{ideia.Title}</h2>
       <p className="descricao_ideia">{ideia.Description}</p>
-      <Link href={`/${ideia.Link}`} passHref>
+      <Link href={`${ideia.Link}`} passHref>
         <p className="btn_ideia btn">Saiba mais</p>
       </Link>
     </article>
