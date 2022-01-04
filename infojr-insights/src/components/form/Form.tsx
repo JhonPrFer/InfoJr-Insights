@@ -84,6 +84,7 @@ const Form = () => {
             className="descricao_link"
             placeholder="Escreva uma descrição"
             required
+            maxLength={499}
           />
         </label>
         <input

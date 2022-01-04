@@ -98,10 +98,6 @@ const TodosOsLinksStyled = styled.section`
     .conteudo_pag {
       align-items: center;
     }
-
-    .botoes_pag {
-      display: none;
-    }
   }
 `
 export default TodosOsLinksStyled

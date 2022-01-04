@@ -7,6 +7,11 @@ const PagIdeiaStyled = styled.section`
   color: #fff;
   background: #1a1c17;
 
+  .ideia_img {
+    align-self: center;
+    max-height: 600px;
+    max-width: 100%;
+  }
   .conteudo_ideia {
     display: flex;
     flex-direction: column;
