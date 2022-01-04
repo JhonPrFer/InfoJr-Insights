@@ -52,7 +52,7 @@ const Form = () => {
             <option className="option" value="Design">
               Design
             </option>
-            <option className="option" value="Miscelânea">
+            <option className="option" value="Mix">
               Miscelânea
             </option>
           </select>

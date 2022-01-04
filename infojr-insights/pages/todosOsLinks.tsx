@@ -1,22 +1,34 @@
-import { GetStaticProps } from 'next'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import Prev from '../public/images/prev.svg'
 import Prox from '../public/images/prox.svg'
 import LinksGrid from '../src/components/linksGrid/LinksGrid'
 import TodosOsLinksStyled from '../src/styles/TodosOsLinkStyled'
 
-const TodosOsLinks = ({ ideias }: Props) => {
+const TodosOsLinks = () => {
   const [linkPag, setLinkPag] = useState(1)
+  const [ideias, setIdeias] = useState([])
+  const [filtro, setFiltro] = useState('')
 
+  useEffect(() => {
+    fetch(`https://apinsights.herokuapp.com/insight/${filtro}`)
+      .then(response => response.json())
+      .then(json => setIdeias(json))
+  }, [filtro])
   return (
     <TodosOsLinksStyled>
       <h2 className="titulo_pag">Todos os Links</h2>
       <section className="conteudo_pag">
         <label htmlFor="filtro" className="label_filtro">
           Filtro
-          <select name="Filtro" id="filtro" className="filtro">
+          <select
+            name="Filtro"
+            value={filtro}
+            onChange={e => setFiltro(e.target.value)}
+            id="filtro"
+            className="filtro"
+          >
             <option className="filtro_option" selected value="">
               Todos
             </option>
@@ -32,7 +44,7 @@ const TodosOsLinks = ({ ideias }: Props) => {
             <option className="filtro_option" value="Design">
               Design
             </option>
-            <option className="filtro_option" value="Miscelânea">
+            <option className="filtro_option" value="Mix">
               Miscelânea
             </option>
           </select>
@@ -90,24 +102,3 @@ const TodosOsLinks = ({ ideias }: Props) => {
 }
 
 export default TodosOsLinks
-
-export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`https://apinsights.herokuapp.com/insight`)
-  const data: Ideia[] = await res.json()
-
-  return {
-    props: { ideias: data },
-  }
-}
-export interface Ideia {
-  Id: string
-  Title: string
-  Category: string
-  Link: string
-  Description: string
-  Image_Link: string
-}
-
-export interface Props {
-  ideias: Ideia[]
-}
