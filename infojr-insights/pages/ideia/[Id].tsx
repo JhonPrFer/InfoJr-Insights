@@ -1,6 +1,5 @@
 import { GetStaticPaths, GetStaticProps } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { ParsedUrlQuery } from 'querystring'
 
 import Imagem1 from '../../public/images/image 1.png'
@@ -9,12 +8,18 @@ import PagIdeiaStyled from '../../src/styles/PagIdeiaStyled'
 const PagIdeia = ({ ideia }: Props) => (
   <PagIdeiaStyled>
     <Image className="ideia_img" src={Imagem1} />
+
     <article className="conteudo_ideia">
       <h2 className="titulo_ideia">{ideia.Title}</h2>
       <p className="descricao_ideia">{ideia.Description}</p>
-      <Link href={`${ideia.Link}`} passHref>
-        <p className="btn_ideia btn">Saiba mais</p>
-      </Link>
+      <a
+        href={ideia.Link}
+        target="_blank"
+        className="btn_ideia btn"
+        rel="noreferrer"
+      >
+        Saiba mais
+      </a>
     </article>
   </PagIdeiaStyled>
 )
