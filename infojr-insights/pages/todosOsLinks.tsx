@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 
 import Prev from '../public/images/prev.svg'
 import Prox from '../public/images/prox.svg'
@@ -24,6 +24,11 @@ const TodosOsLinks = () => {
   let lastPage: number = ideias.length / 10
   lastPage = Math.floor(lastPage) + 1
 
+  function filtragem(e: ChangeEvent<HTMLSelectElement>): void {
+    setFiltro(e.target.value)
+    setLinkPag(1)
+  }
+
   return (
     <TodosOsLinksStyled>
       <h2 className="titulo_pag">Todos os Links</h2>
@@ -33,7 +38,7 @@ const TodosOsLinks = () => {
           <select
             name="Filtro"
             value={filtro}
-            onChange={e => setFiltro(e.target.value)}
+            onChange={filtragem}
             id="filtro"
             className="filtro"
           >
