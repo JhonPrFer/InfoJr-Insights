@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Form = styled.form`
+export const Form = styled.section`
   width: 100%;
   .formulario {
     display: grid;

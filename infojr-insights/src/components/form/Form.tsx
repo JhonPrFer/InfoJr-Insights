@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
 import * as S from './FormStyled'
 import Close from './images/Close.svg'
@@ -8,22 +8,60 @@ const Form = () => {
   const [popupState, setpopupState] = useState(false)
 
   function popupTime() {
-    setInterval(() => {
-      setpopupState(false)
-    }, 4000)
+    if (popupState)
+      setInterval(() => {
+        setpopupState(false)
+      }, 4000)
   }
   useEffect(() => {
     if (popupState) popupTime()
   })
 
+  const [info, setInfo] = useState({
+    Title: '',
+    Category: '',
+    Link: '',
+    Image_Link: '',
+    Description: '',
+  })
+
+  function formulario(
+    e:
+      | ChangeEvent<HTMLInputElement>
+      | ChangeEvent<HTMLSelectElement>
+      | ChangeEvent<HTMLTextAreaElement>
+  ) {
+    const newInfo = { ...info }
+    newInfo[e.target.id] = e.target.value
+    setInfo(newInfo)
+    console.log(newInfo)
+    console.log(info)
+  }
+
+  const envio = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const res = await fetch('https://apinsights.herokuapp.com/insight', {
+      method: 'POST',
+      body: JSON.stringify(info),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+    const data = await res.json()
+    console.log(data)
+    setpopupState(true)
+  }
+
   return (
     <S.Form>
-      <form className="formulario">
+      <form className="formulario" onSubmit={envio}>
         <label htmlFor="titulo_link" className="label">
           Título do link
           <input
             type="text"
-            id="titulo_link"
+            id="Title"
+            name="Title"
+            onChange={e => formulario(e)}
             className="titulo_link input"
             placeholder="Escreva um título para o link"
             required
@@ -33,27 +71,29 @@ const Form = () => {
           Categorias
           <select
             name="categorias"
-            id="categorias"
+            id="Category"
+            onChange={e => formulario(e)}
             className="categorias input"
-            required
+            aria-required
+            defaultValue="--"
           >
-            <option className="option" selected disabled value="--">
+            <option className="option" disabled>
               --
             </option>
-            <option className="option" value="Front-end">
-              Front-end
+            <option className="option" defaultValue="front-end">
+              front-end
             </option>
-            <option className="option" value="Back-end">
-              Back-end
+            <option className="option" defaultValue="back-end">
+              back-end
             </option>
-            <option className="option" value="Mobile">
-              Mobile
+            <option className="option" defaultValue="mobile">
+              mobile
             </option>
-            <option className="option" value="Design">
-              Design
+            <option className="option" defaultValue="design">
+              design
             </option>
-            <option className="option" value="Mix">
-              Miscelânea
+            <option className="option" defaultValue="mix">
+              miscelânea
             </option>
           </select>
         </label>
@@ -61,7 +101,8 @@ const Form = () => {
           Link principal
           <input
             type="url"
-            id="link_principal"
+            id="Link"
+            onChange={e => formulario(e)}
             className="link_principal input"
             placeholder="Ex. https://www.linkutil.com"
             required
@@ -71,7 +112,8 @@ const Form = () => {
           Link secundário (opcional)
           <input
             type="url"
-            id="link_secundario"
+            id="Image_Link"
+            onChange={e => formulario(e)}
             className="link_secundario input"
             placeholder="Escreva um link alternativo"
           />
@@ -80,8 +122,9 @@ const Form = () => {
           Digite uma descrição para este link
           <textarea
             name="descricao"
-            id="descricao_link"
+            id="Description"
             className="descricao_link"
+            onChange={e => formulario(e)}
             placeholder="Escreva uma descrição"
             required
             maxLength={499}
@@ -96,7 +139,6 @@ const Form = () => {
           type="submit"
           value="Cadastrar"
           className="btn_form btn_cadastrar"
-          onClick={() => setpopupState(true)}
         />
       </form>
       <div className={popupState ? 'popup ativo' : 'popup'}>

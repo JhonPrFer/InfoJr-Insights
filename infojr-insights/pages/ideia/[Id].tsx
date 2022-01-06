@@ -45,6 +45,7 @@ export const getStaticProps: GetStaticProps = async context => {
     props: { ideia: data[0] },
   }
 }
+
 export interface Ideia {
   Id: string
   Title: string
