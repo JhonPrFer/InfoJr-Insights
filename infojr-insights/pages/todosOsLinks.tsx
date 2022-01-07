@@ -119,10 +119,3 @@ const TodosOsLinks = () => {
 }
 
 export default TodosOsLinks
-function numeroPag(): number {
-  throw new Error('Function not implemented.')
-}
-
-function calcpag() {
-  throw new Error('Function not implemented.')
-}
