@@ -1,3 +1,4 @@
+import { findSourceMap } from 'module'
 import Image from 'next/image'
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 
@@ -62,12 +63,11 @@ const Form = () => {
       },
     })
     setpopupState(true)
-    e.target.reset()
   }
 
   return (
     <S.Form>
-      <form className="formulario" onSubmit={envio}>
+      <form className="formulario" id="form" onSubmit={envio}>
         <label htmlFor="Title" className="label">
           Título do link
           <input
