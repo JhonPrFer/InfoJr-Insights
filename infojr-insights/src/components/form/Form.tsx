@@ -25,16 +25,30 @@ const Form = () => {
     Description: '',
   })
 
-  function formulario(
-    e:
-      | ChangeEvent<HTMLInputElement>
-      | ChangeEvent<HTMLSelectElement>
-      | ChangeEvent<HTMLTextAreaElement>
-  ) {
+  function pegaTitle(e: ChangeEvent<HTMLInputElement>) {
     const newInfo = { ...info }
-    newInfo[e.target.id] = e.target.value
+    newInfo.Title = e.target.value
     setInfo(newInfo)
-    console.log(newInfo)
+  }
+  function pegaLink(e: ChangeEvent<HTMLInputElement>) {
+    const newInfo = { ...info }
+    newInfo.Link = e.target.value
+    setInfo(newInfo)
+  }
+  function pegaImageLink(e: ChangeEvent<HTMLInputElement>) {
+    const newInfo = { ...info }
+    newInfo.Image_Link = e.target.value
+    setInfo(newInfo)
+  }
+  function pegaCategory(e: ChangeEvent<HTMLSelectElement>) {
+    const newInfo = { ...info }
+    newInfo.Category = e.target.value
+    setInfo(newInfo)
+  }
+  function pegaDescription(e: ChangeEvent<HTMLTextAreaElement>) {
+    const newInfo = { ...info }
+    newInfo.Description = e.target.value
+    setInfo(newInfo)
     console.log(info)
   }
 
@@ -47,34 +61,33 @@ const Form = () => {
         'Content-Type': 'application/json',
       },
     })
-    const data = await res.json()
-    console.log(data)
     setpopupState(true)
+    e.target.reset()
   }
 
   return (
     <S.Form>
       <form className="formulario" onSubmit={envio}>
-        <label htmlFor="titulo_link" className="label">
+        <label htmlFor="Title" className="label">
           Título do link
           <input
             type="text"
             id="Title"
             name="Title"
-            onChange={e => formulario(e)}
+            onChange={e => pegaTitle(e)}
             className="titulo_link input"
             placeholder="Escreva um título para o link"
             required
           />
         </label>
-        <label htmlFor="categorias" className="label">
+        <label htmlFor="Category" className="label">
           Categorias
           <select
-            name="categorias"
+            name="Category"
             id="Category"
-            onChange={e => formulario(e)}
+            onChange={e => pegaCategory(e)}
             className="categorias input"
-            aria-required
+            required
             defaultValue="--"
           >
             <option className="option" disabled>
@@ -97,34 +110,36 @@ const Form = () => {
             </option>
           </select>
         </label>
-        <label htmlFor="link_principal" className="label">
+        <label htmlFor="Link" className="label">
           Link principal
           <input
             type="url"
             id="Link"
-            onChange={e => formulario(e)}
+            name="Link"
+            onChange={e => pegaLink(e)}
             className="link_principal input"
             placeholder="Ex. https://www.linkutil.com"
             required
           />
         </label>
-        <label htmlFor="link_secundario" className="label">
+        <label htmlFor="Image_Link" className="label">
           Link secundário (opcional)
           <input
             type="url"
             id="Image_Link"
-            onChange={e => formulario(e)}
+            name="Image_Link"
+            onChange={e => pegaImageLink(e)}
             className="link_secundario input"
             placeholder="Escreva um link alternativo"
           />
         </label>
-        <label htmlFor="descricao_link" className="label descricao_label">
+        <label htmlFor="Description" className="label descricao_label">
           Digite uma descrição para este link
           <textarea
-            name="descricao"
+            name="Description"
             id="Description"
             className="descricao_link"
-            onChange={e => formulario(e)}
+            onChange={e => pegaDescription(e)}
             placeholder="Escreva uma descrição"
             required
             maxLength={499}
