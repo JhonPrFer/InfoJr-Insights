@@ -17,12 +17,16 @@ const TodosOsLinks = () => {
       .then(json => setIdeias(json))
   }, [filtro])
 
+  function calcPag() {
+    return ideias.length % 10 === 0
+      ? ideias.length / 10
+      : Math.floor(ideias.length / 10) + 1
+  }
   const x = 10 * linkPag
   const y = x - 9
 
   const ideias1 = ideias.slice(y - 1, x)
-  let lastPage: number = ideias.length / 10
-  lastPage = Math.floor(lastPage) + 1
+  const lastPage: number = calcPag()
 
   function filtragem(e: ChangeEvent<HTMLSelectElement>): void {
     setFiltro(e.target.value)
@@ -115,3 +119,10 @@ const TodosOsLinks = () => {
 }
 
 export default TodosOsLinks
+function numeroPag(): number {
+  throw new Error('Function not implemented.')
+}
+
+function calcpag() {
+  throw new Error('Function not implemented.')
+}

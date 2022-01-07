@@ -49,7 +49,6 @@ const Form = () => {
     const newInfo = { ...info }
     newInfo.Description = e.target.value
     setInfo(newInfo)
-    console.log(info)
   }
 
   const envio = async (e: FormEvent<HTMLFormElement>) => {
