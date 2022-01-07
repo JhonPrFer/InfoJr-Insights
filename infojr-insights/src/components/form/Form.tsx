@@ -62,6 +62,7 @@ const Form = () => {
         'Content-Type': 'application/json',
       },
     })
+    console.log(res)
     setpopupState(true)
   }
 
