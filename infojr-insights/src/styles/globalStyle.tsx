@@ -1,17 +1,14 @@
 import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
-*{
-  margin: 0;
-  padding: 0;
-  border: none;
-  text-decoration: none;
-  font-family: 'poppins', sans serif;
-  scroll-behavior: smooth;
-  font-size: 10px;
-    
-  .body.ativo{
-    overflow: hidden;
+  *{
+    margin: 0;
+    padding: 0;
+    border: none;
+    text-decoration: none;
+    font-family: 'poppins', sans serif;
+    scroll-behavior: smooth;
+    font-size: 10px;
   }
 
   .btn {
@@ -98,5 +95,19 @@ export default createGlobalStyle`
   .card_link:focus::after {
     width: 110%;
   }
-}
+
+  ::-webkit-scrollbar{
+      width: 10px;
+  }
+
+  ::-webkit-scrollbar-track{
+      background-color: #1A1C17;
+  }
+  ::-webkit-scrollbar-thumb{
+      background-color: #252822;
+      border-radius: 190px;
+  }
+  ::-webkit-scrollbar-thumb:hover{
+      background-color: #191919;
+  }
 `

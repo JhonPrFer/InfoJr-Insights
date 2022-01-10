@@ -98,9 +98,17 @@ const TodosOsLinksStyled = styled.section`
     .conteudo_pag {
       align-items: center;
     }
-
     .botoes_pag {
-      display: none;
+      gap: 10px;
+    }
+
+    .btn_links {
+      width: 50px;
+      height: 50px;
+    }
+
+    .nav_index {
+      width: 50px;
     }
   }
 `

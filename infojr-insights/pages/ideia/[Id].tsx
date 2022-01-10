@@ -1,14 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
 import { GetStaticPaths, GetStaticProps } from 'next'
-import Image from 'next/image'
 import { ParsedUrlQuery } from 'querystring'
 
-import Imagem1 from '../../public/images/image 1.png'
 import PagIdeiaStyled from '../../src/styles/PagIdeiaStyled'
 
 const PagIdeia = ({ ideia }: Props) => (
   <PagIdeiaStyled>
-    <Image className="ideia_img" src={Imagem1} />
-
+    <img className="ideia_img" src={ideia.Image_Link} alt="imagem da ideia" />
     <article className="conteudo_ideia">
       <h2 className="titulo_ideia">{ideia.Title}</h2>
       <p className="descricao_ideia">{ideia.Description}</p>
@@ -47,6 +45,7 @@ export const getStaticProps: GetStaticProps = async context => {
     props: { ideia: data[0] },
   }
 }
+
 export interface Ideia {
   Id: string
   Title: string

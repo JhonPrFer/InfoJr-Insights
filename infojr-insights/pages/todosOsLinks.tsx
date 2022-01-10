@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 
 import Prev from '../public/images/prev.svg'
 import Prox from '../public/images/prox.svg'
@@ -16,6 +16,23 @@ const TodosOsLinks = () => {
       .then(response => response.json())
       .then(json => setIdeias(json))
   }, [filtro])
+
+  function calcPag() {
+    return ideias.length % 10 === 0
+      ? ideias.length / 10
+      : Math.floor(ideias.length / 10) + 1
+  }
+  const x = 10 * linkPag
+  const y = x - 9
+
+  const ideias1 = ideias.slice(y - 1, x)
+  const lastPage: number = calcPag()
+
+  function filtragem(e: ChangeEvent<HTMLSelectElement>): void {
+    setFiltro(e.target.value)
+    setLinkPag(1)
+  }
+
   return (
     <TodosOsLinksStyled>
       <h2 className="titulo_pag">Todos os Links</h2>
@@ -25,7 +42,7 @@ const TodosOsLinks = () => {
           <select
             name="Filtro"
             value={filtro}
-            onChange={e => setFiltro(e.target.value)}
+            onChange={filtragem}
             id="filtro"
             className="filtro"
           >
@@ -49,7 +66,7 @@ const TodosOsLinks = () => {
             </option>
           </select>
         </label>
-        <LinksGrid ideias={ideias} />
+        <LinksGrid ideias={ideias1} />
         <nav className="botoes_pag">
           <button
             className={
@@ -67,7 +84,7 @@ const TodosOsLinks = () => {
           </button>
           <button
             className={
-              linkPag === 6
+              linkPag === lastPage
                 ? 'btn_links pag-atual btn_lastpag'
                 : 'btn_links pag-atual'
             }
@@ -77,19 +94,19 @@ const TodosOsLinks = () => {
           <p className="nav_index">of</p>
           <button
             className="btn_links btn_lastpag"
-            onClick={() => setLinkPag(6)}
+            onClick={() => setLinkPag(lastPage)}
           >
-            6
+            {lastPage}
           </button>
           <button
             className={
-              linkPag === 6
+              linkPag === lastPage
                 ? 'btn_links btn_muda-pag disable'
                 : 'btn_links btn_muda-pag'
             }
             onClick={
-              linkPag === 6
-                ? () => setLinkPag(6)
+              linkPag === lastPage
+                ? () => setLinkPag(lastPage)
                 : () => setLinkPag(linkPag + 1)
             }
           >
